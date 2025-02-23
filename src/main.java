@@ -7,7 +7,6 @@ public class main {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Apakah ingin input melalui file test case berekstensi .txt? (ya/tidak): ");
         String useFileInput = scanner.nextLine().trim().toLowerCase();
-
         if (useFileInput.equals("ya")) {
             System.out.print("Masukkan nama file (dengan ekstensi .txt): ");
             String fileName = scanner.nextLine().trim();
@@ -20,7 +19,6 @@ public class main {
                 return;
             }
         }
-
         if (useFileInput.equals("tidak")) {
             List<String> manualInput = new ArrayList<>();
             while (scanner.hasNextLine()) {
@@ -139,7 +137,6 @@ public class main {
             countBlok++;
         }
 
-        // Call Puzzler to solve the puzzle
         Puzzler puzzler = new Puzzler(N, M, listBlok);
         long startTime = System.currentTimeMillis();
         boolean solved = puzzler.solve();
@@ -152,8 +149,6 @@ public class main {
         }
         System.out.println("Waktu pencarian: " + (endTime - startTime) + " ms");
         System.out.println("Banyak kasus yang ditinjau: " + puzzler.getCaseCount());
-
-        // Ask if the user wants to save the solution
         System.out.print("Apakah anda ingin menyimpan solusi? (ya/tidak): ");
         String saveSolution = scanner.nextLine().trim().toLowerCase();
         if (saveSolution.equals("ya")) {
@@ -177,7 +172,6 @@ public class main {
         scanner.close();
     }
 
-    // Fungsi untuk mengecek apakah blok valid atau tidak
     public static boolean isBlokValid(List<String> blok) {
         int rows = blok.size();
         int cols = blok.get(0).length();

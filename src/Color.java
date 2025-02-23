@@ -37,7 +37,7 @@ public class Color {
     }
 
     public static String getColor(char c) {
-        return colorMap.getOrDefault(c, "\u001B[0m"); // Default to reset color
+        return colorMap.getOrDefault(c, "\u001B[0m"); 
     }
 
     public static String reset() {
