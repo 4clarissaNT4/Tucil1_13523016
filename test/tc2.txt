@@ -1,0 +1,9 @@
+3 3 4
+DEFAULT
+A
+AA
+B
+BB
+CC
+D
+stop
