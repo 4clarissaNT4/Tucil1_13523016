@@ -10,7 +10,8 @@ public class main {
         if (useFileInput.equals("ya")) {
             System.out.print("Masukkan nama file (dengan ekstensi .txt): ");
             String fileName = scanner.nextLine().trim();
-            List<String> fileInput = File.readFile(fileName);
+            String filePath = "../test/" + fileName;
+            List<String> fileInput = File.readFile(filePath);
             if (fileInput == null) {
                 System.out.println("Gagal membaca file. Input akan dilakukan secara manual.");
                 useFileInput = "tidak";
@@ -142,8 +143,8 @@ public class main {
         boolean solved = puzzler.solve();
         long endTime = System.currentTimeMillis();
         if (solved) {
-            puzzler.printBoard();
             System.out.println("Papan berhasil diisi penuh.");
+            puzzler.printBoard();
         } else {
             System.out.println("Tidak ada solusi.");
         }

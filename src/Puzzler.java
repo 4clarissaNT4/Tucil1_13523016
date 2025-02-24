@@ -32,10 +32,8 @@ public class Puzzler {
         if (blockIndex == blocks.size()) {
             return isBoardFull();
         }
-
         List<String> block = blocks.get(blockIndex);
         Set<List<String>> allOrientations = getAllUniqueOrientations(block);
-
         for (List<String> orientation : allOrientations) {
             for (int i = 0; i <= N - orientation.size(); i++) {
                 for (int j = 0; j <= M - orientation.get(0).length(); j++) {
